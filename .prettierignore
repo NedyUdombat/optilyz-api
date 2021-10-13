@@ -4,3 +4,4 @@ doc/
 .travis.yml
 build/
 dist/
+src/app.js
