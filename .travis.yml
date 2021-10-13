@@ -7,4 +7,6 @@ install:
 
 script:
   - yarn test
+
+after_script:
   - yarn coverage
