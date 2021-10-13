@@ -50,8 +50,9 @@ const authenticate = async (req, res) => {
     );
   }
 
-  if (!bcrypt.compareSync(password, userExists.password))
+  if (!bcrypt.compareSync(password, userExists.password)) {
     return sendError(res, 401, 'Password is incorrect');
+  }
 
   const payload = Object.assign({}, userExists._doc);
   delete payload.password;

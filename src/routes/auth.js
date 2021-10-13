@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { account } from '../controllers';
+import { auth } from '../controllers';
 import Validator from '../middlewares/validators';
 
 const {
@@ -8,7 +8,7 @@ const {
   validateUser: { validateUserRegistration, validateUserAuthentication },
 } = Validator;
 
-const { create, authenticate } = account;
+const { create, authenticate } = auth;
 
 const authRouter = Router();
 

@@ -1,3 +1,3 @@
-import accountController from './account';
+import authController from './auth';
 
-export const account = accountController;
+export const auth = authController;
