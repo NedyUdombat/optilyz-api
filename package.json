@@ -38,9 +38,12 @@
   "author": "Nedy Udombat",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "~4.16.1",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.2",
     "volleyball": "^1.5.1"
   },
