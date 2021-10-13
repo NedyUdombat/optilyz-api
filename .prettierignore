@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+doc/
+.travis.yml
+build/
+dist/

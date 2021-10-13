@@ -5,13 +5,29 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon --exec babel-node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write '**/*.{js,jsx}'"
   },
   "engines": {
     "node": ">=12.1.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
   "keywords": [],
-  "author": "",
+  "author": "Nedy Udombat",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -24,6 +40,13 @@
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
-    "nodemon": "^2.0.13"
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "husky": "^3.1.0",
+    "lint-staged": "9.4.2",
+    "nodemon": "^2.0.13",
+    "prettier": "1.18.2"
   }
 }
