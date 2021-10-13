@@ -4,6 +4,8 @@ dotenv.config();
 
 const common = {
   NODE_ENV: process.env.NODE_ENV,
+  JWT_SECRET: process.env.JWT_SECRET,
+  JWT_EXPIERSIN: process.env.JWT_EXPIERSIN,
 };
 
 const config = Object.freeze({
