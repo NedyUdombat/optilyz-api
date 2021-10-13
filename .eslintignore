@@ -9,3 +9,4 @@
 /docs/**
 /jsdoc/**
 .github
+/src/app.js
