@@ -16,14 +16,13 @@ const jsonResponse = {
 const generateToken = (payload, expiresIn = JWT_EXPIERSIN) =>
   jwt.sign({ ...payload }, JWT_SECRET, { expiresIn });
 
-const verifyToken = token => {
-  return jwt.verify(token, JWT_SECRET, (err, data) => {
+const verifyToken = token =>
+  jwt.verify(token, JWT_SECRET, (err, data) => {
     if (err) {
       return null;
     }
     return data;
   });
-};
 
 export default {
   jsonResponse,

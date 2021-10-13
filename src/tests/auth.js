@@ -10,9 +10,6 @@ import {
   userWithoutPassword,
 } from './mockData/user';
 
-let token = '';
-let userToken = '';
-let userId = '';
 export const authTests = () => {
   describe('User Module Registration & Authentication & Password Block', () => {
     beforeAll(async () => {
@@ -34,7 +31,6 @@ export const authTests = () => {
       expect(typeof response.body.user).toBe('object');
       expect(response.body.user.name).toEqual(user.name);
       expect(response.body.user.email).toEqual(user.email);
-      expect(response.body.user.hasOwnProperty('password')).toEqual(false);
       done();
     });
 
@@ -93,9 +89,6 @@ export const authTests = () => {
         .post('/api/v1/accounts/authenticate')
         .send(user);
 
-      userToken = response.body.token;
-      userId = response.body.user._id;
-
       expect(response.statusCode).toBe(201);
       expect(response.body.status).toBe('success');
       expect(response.body.message).toBe('Successfully Logged In');
@@ -103,9 +96,8 @@ export const authTests = () => {
       expect(typeof response.body.token).toBe('string');
       expect(response.body).toHaveProperty('user');
       expect(typeof response.body.user).toBe('object');
-      expect(response.body.user.fullname).toEqual(user.fullname);
+      expect(response.body.user.name).toEqual(user.name);
       expect(response.body.user.email).toEqual(user.email);
-      expect(response.body.user.hasOwnProperty('password')).toEqual(false);
       done();
     });
 

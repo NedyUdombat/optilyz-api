@@ -1,5 +1,5 @@
 import User from '../models/user';
 
-const deleteUsers = async () => await User.deleteMany({});
+const deleteUsers = () => User.deleteMany({});
 
 export { deleteUsers };

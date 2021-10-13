@@ -15,7 +15,9 @@ const create = async (req, res) => {
 
   const userExists = await User.findOne({ email: email.toLowerCase() });
 
-  if (userExists) return sendError(res, 409, 'This user already exists.');
+  if (userExists) {
+    return sendError(res, 409, 'This user already exists.');
+  }
 
   const user = await User.create({
     name,
@@ -40,12 +42,13 @@ const authenticate = async (req, res) => {
 
   const userExists = await User.findOne({ email: email.toLowerCase() });
 
-  if (!userExists)
+  if (!userExists) {
     return sendError(
       res,
       404,
       'This user does not exist, please create an account',
     );
+  }
 
   if (!bcrypt.compareSync(password, userExists.password))
     return sendError(res, 401, 'Password is incorrect');
