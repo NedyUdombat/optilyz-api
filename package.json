@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon --exec babel-node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn prettier && jest -u --runInBand --forceExit --coverage --detectOpenHandles && yarn coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls",
     "prettier": "prettier --write '**/*.{js,jsx}'"
   },
   "engines": {
@@ -26,13 +27,20 @@
       "git add --force"
     ]
   },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/config/variables.js"
+    ]
+  },
   "keywords": [],
   "author": "Nedy Udombat",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "dotenv": "^7.0.0",
+    "express": "~4.16.1",
     "mongoose": "^5.9.2",
     "volleyball": "^1.5.1"
   },
@@ -41,13 +49,19 @@
     "@babel/core": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
+    "babel-eslint": "^10.0.1",
+    "core-js": "3",
+    "coveralls": "^3.1.1",
+    "cross-env": "^7.0.2",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "6.4.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-prettier": "3.1.1",
     "husky": "^3.1.0",
+    "jest": "^24.9.0",
     "lint-staged": "9.4.2",
     "nodemon": "^2.0.13",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "supertest": "^4.0.2"
   }
 }

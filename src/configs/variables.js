@@ -19,12 +19,12 @@ const config = Object.freeze({
   },
   development: {
     ...common,
-    PORT: process.env.PORT || process.env.DEV_PORT,
+    PORT: process.env.DEV_PORT,
     DATABASE_URL: process.env.DEV_DATABASE_URL,
   },
   staging: {
     ...common,
-    PORT: process.env.PORT || process.env.STAGING_PORT,
+    PORT: process.env.STAGING_PORT,
     DATABASE_URL: process.env.STAGING_DATABASE_URL,
   },
   production: {
