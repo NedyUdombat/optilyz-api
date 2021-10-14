@@ -12,9 +12,9 @@ import {
 
 export const authTests = () => {
   describe('User Module Registration & Authentication & Password Block', () => {
-    beforeAll(async () => {
+    beforeAll(() => {
       jest.setTimeout(15000);
-      await deleteUsers();
+      deleteUsers();
     });
 
     it('should return an object of a registered user', async done => {

@@ -4,6 +4,7 @@ import { validationResult } from 'express-validator/check';
 import utils from '../../utils/helpers';
 
 /** Validator(s) */
+import validateTask from './validateTask';
 import validateUser from './validateUser';
 
 const {
@@ -29,4 +30,5 @@ const handleValidation = async (req, res, next) => {
 export default {
   handleValidation,
   validateUser,
+  validateTask,
 };

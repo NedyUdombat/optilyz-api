@@ -5,4 +5,3 @@ doc/
 build/
 dist/
 src/app.js
-src/tests/

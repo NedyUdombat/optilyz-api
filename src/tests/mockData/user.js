@@ -4,6 +4,12 @@ const user = {
   password: 'password123',
 };
 
+const anotherUser = {
+  email: 'janedoe@gmail.com',
+  name: 'jane doe',
+  password: 'password123',
+};
+
 const userWithoutName = {
   email: 'johndoe@gmail.com',
   password: 'password123',
@@ -31,4 +37,5 @@ export {
   userWithoutName,
   userWithoutEmail,
   userWithoutPassword,
+  anotherUser,
 };
