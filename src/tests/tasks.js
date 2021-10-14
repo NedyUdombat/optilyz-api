@@ -44,7 +44,11 @@ export const taskTests = () => {
         .post('/api/v1/accounts/authenticate')
         .send(anotherUser);
 
-      token = response.body.token;
+      const {
+        body: { token: userToken },
+      } = response;
+
+      token = userToken;
 
       expect(response.statusCode).toBe(201);
       expect(response.body.status).toBe('success');
