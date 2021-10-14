@@ -1,5 +1,4 @@
 Optilyz = A Task manager
-
 =======
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/29e57bda4b3442576b19/maintainability)](https://codeclimate.com/github/NedyUdombat/optilyz-api/maintainability)
@@ -8,5 +7,4 @@ Optilyz = A Task manager
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 ## Link to Hosted App
-
 [API link](https://optilyz-prod.herokuapp.com/)
