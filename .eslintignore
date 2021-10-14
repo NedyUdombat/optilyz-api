@@ -10,4 +10,3 @@
 /jsdoc/**
 .github
 src/app.js
-src/tests/

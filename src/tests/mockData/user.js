@@ -37,5 +37,5 @@ export {
   userWithoutName,
   userWithoutEmail,
   userWithoutPassword,
-  anotherUser
+  anotherUser,
 };

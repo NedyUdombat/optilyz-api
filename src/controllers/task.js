@@ -11,13 +11,13 @@ const find = async (req, res) => {
   } = req;
 
   const tasks = await Task.find({ userId: _id }).sort('-createdAt');
-  if (tasks.length === 0)
+  if (tasks.length === 0) {
     return sendError(
       res,
       404,
       'You do not have any tasks, please add tasks to start',
     );
-
+  }
   return sendSuccess(res, 200, 'Successfully retrieved all your tasks', {
     tasks,
   });
@@ -34,9 +34,9 @@ const findOne = async (req, res) => {
     _id: id,
   });
 
-  console.log('task==============', task);
-
-  if (!task) return sendError(res, 404, 'This task does not exist');
+  if (!task) {
+    return sendError(res, 404, 'This task does not exist');
+  }
 
   return sendSuccess(res, 200, 'Successfully retrieved task', {
     task,
@@ -50,12 +50,14 @@ const create = async (req, res) => {
   } = req;
 
   const taskExists = await Task.findOne({
-    title: title,
-    description: description,
+    title,
+    description,
     userId: _id,
   });
 
-  if (taskExists) return sendError(res, 409, 'This tasks already exists.');
+  if (taskExists) {
+    return sendError(res, 409, 'This tasks already exists.');
+  }
 
   const task = await Task.create({
     title,
@@ -82,7 +84,9 @@ const update = async (req, res) => {
     _id: id,
   });
 
-  if (!taskExists) return sendError(res, 404, 'This task does not exist.');
+  if (!taskExists) {
+    return sendError(res, 404, 'This task does not exist.');
+  }
 
   const task = await Task.findByIdAndUpdate(
     id,

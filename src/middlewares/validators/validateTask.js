@@ -2,7 +2,7 @@ import { check } from 'express-validator/check';
 
 const isDate = date => {
   const timestamp = Date.parse(date);
-  return !isNaN(timestamp);
+  return !Number.isNaN(Number(timestamp));
 };
 
 export const validateTask = [
