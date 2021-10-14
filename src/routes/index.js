@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import authRouter from './auth';
+import taskRouter from './task';
 import utils from '../utils/helpers';
 
 const {
@@ -14,5 +15,6 @@ routes.get('/', (req, res) =>
 );
 
 routes.use('/accounts', authRouter);
+routes.use('/tasks', taskRouter);
 
 export default routes;

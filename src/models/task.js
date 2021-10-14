@@ -4,9 +4,10 @@ const Task = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    deadline: { type: String, required: true },
-    notificationTime: { type: String, required: true },
+    deadline: { type: Date, required: true },
+    notificationTime: { type: Date, required: true },
     isCompleted: { type: Boolean, default: false },
+    userId: { type: Schema.Types.ObjectId, required: true },
   },
   {
     timestamps: true,
